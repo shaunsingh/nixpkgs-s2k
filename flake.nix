@@ -10,7 +10,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
-
     meson059.url = "github:boppyt/nixpkgs/meson";
 
     eww = {
@@ -67,21 +66,24 @@
           yabai-m1 neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
           wlroots-git alacritty-ligatures eww;
       };
-    } // flake-utils.lib.eachSystem [ "aarch64-darwin" ] (system:
+    } // flake-utils.lib.eachSystem [
+      "aarch64-darwin"
+      "x86_64-linux"
+      "aarch64-linux"
+    ] (system:
       let
         pkgs = import nixpkgs {
           inherit system;
           overlays = [ rust-nightly.overlay ];
           allowBroken = true;
-          # allowUnsupportedSystem = true;
+          allowUnsupportedSystem = true;
         };
         mesonPkgs = import meson059 { inherit system; };
         version = "999-unstable";
       in {
-
         defaultPackage = self.packages.${system}.eww;
         eww = args.eww.defaultPackage.${system};
-        emacs-ng = args.emacs-ng.defaultPackage.${system};
+        # emacs-ng = args.emacs-ng.defaultPackage.${system};
 
         packages = rec {
 
