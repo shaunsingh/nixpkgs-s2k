@@ -62,7 +62,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.naersk.follows = "nixpkgs";
       inputs.fenix.follows = "nixpkgs";
-      inputs.flake-utils.follows = "nixpkgs";
+      # inputs.flake-utils.follows = "nixpkgs";
     };
 
   };
