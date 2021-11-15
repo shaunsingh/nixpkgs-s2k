@@ -12,22 +12,27 @@
     nixpkgs.url = "github:nixos/nixpkgs/master";
 
     meson059.url = "github:boppyt/nixpkgs/meson";
+
     alacritty-src = {
       url = "github:zenixls2/alacritty/ligature";
       flake = false;
     };
+
     wlroots-src = {
       url = "github:swaywm/wlroots";
       flake = false;
     };
+
     sway-src = {
       url = "github:fluix-dev/sway-borders";
       flake = false;
     };
+
     yabai-src = {
       url = "github:donaldguy/yabai/canon";
       flake = false;
     };
+
     neovide-src = {
       url = "github:neovide/neovide";
       flake = false;
@@ -54,7 +59,7 @@
     {
       overlay = final: prev: {
         inherit (self.packages.${final.system})
-          yabai-git neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
+          yabai-m1 neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
           wlroots-git alacritty-ligatures;
       };
     } // flake-utils.lib.eachSystem [ "aarch64-darwin" ] (system:
@@ -125,7 +130,7 @@
             wlroots = wlroots-git;
           };
 
-          yabai-git = (pkgs.yabai.overrideAttrs (old: {
+          yabai-m1 = (pkgs.yabai.overrideAttrs (old: {
             inherit version;
             src = args.yabai-src;
             # buildInputs = [ Carbon Cocoa ScriptingBridge xxd ];
