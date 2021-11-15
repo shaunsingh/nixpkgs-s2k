@@ -47,8 +47,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    emacs-ng = {
-      url = "github:emacs-ng/emacs-ng";
+    eww = {
+      url = "github:elkowar/eww";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -59,7 +59,7 @@
       overlay = final: prev: {
         inherit (self.packages.${final.system})
           yabai-m1 neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
-          wlroots-git alacritty-ligatures;
+          wlroots-git alacritty-ligatures eww;
       };
     } // flake-utils.lib.eachSystem [
       "aarch64-darwin"
@@ -76,8 +76,8 @@
         mesonPkgs = import meson059 { inherit system; };
         version = "999-unstable";
       in {
-        defaultPackage = self.packages.${system}.emacs-ng;
-        emacs-ng = args.emacs-ng.defaultPackage.${system};
+        defaultPackage = self.packages.${system}.eww;
+        eww = args.eww.defaultPackage.${system};
 
         packages = rec {
 
