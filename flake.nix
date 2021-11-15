@@ -60,8 +60,7 @@
 
   };
 
-  outputs =
-    args@{ self, flake-utils, nixpkgs, rust-nightly, meson059, eww, ... }:
+  outputs = args@{ self, flake-utils, nixpkgs, rust-nightly, meson059, ... }:
     {
       overlay = final: prev: {
         inherit (self.packages.${final.system})
