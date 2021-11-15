@@ -12,11 +12,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/master";
     meson059.url = "github:boppyt/nixpkgs/meson";
 
-    eww = {
-      url = "github:elkowar/eww";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     alacritty-src = {
       url = "github:zenixls2/alacritty/ligature";
       flake = false;
@@ -64,7 +59,7 @@
       overlay = final: prev: {
         inherit (self.packages.${final.system})
           yabai-m1 neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
-          wlroots-git alacritty-ligatures eww;
+          wlroots-git alacritty-ligatures;
       };
     } // flake-utils.lib.eachSystem [
       "aarch64-darwin"
@@ -81,9 +76,8 @@
         mesonPkgs = import meson059 { inherit system; };
         version = "999-unstable";
       in {
-        defaultPackage = self.packages.${system}.eww;
-        eww = args.eww.defaultPackage.${system};
-        # emacs-ng = args.emacs-ng.defaultPackage.${system};
+        defaultPackage = self.packages.${system}.emacs-ng;
+        emacs-ng = args.emacs-ng.defaultPackage.${system};
 
         packages = rec {
 
