@@ -47,9 +47,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    naersk = {
+      url = "github:nmattia/naersk";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     eww = {
       url = "github:elkowar/eww";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.naersk.follows = "nixpkgs";
     };
 
   };
