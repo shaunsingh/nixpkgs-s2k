@@ -59,7 +59,7 @@
       overlay = final: prev: {
         inherit (self.packages.${final.system})
           yabai-m1 neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
-          wlroots-git alacritty-ligatures eww;
+          wlroots-git eww alacritty-ligatures;
       };
     } // flake-utils.lib.eachSystem [
       "aarch64-darwin"
