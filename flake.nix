@@ -77,9 +77,10 @@
         version = "999-unstable";
       in {
         defaultPackage = self.packages.${system}.eww;
-        eww = args.eww.defaultPackage.${system};
 
         packages = rec {
+
+          eww = args.eww.defaultPackage.${system};
 
           sf-mono-liga-bin = pkgs.callPackage ./pkgs/sf-mono-liga-bin { };
 
