@@ -52,10 +52,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     eww = {
       url = "github:elkowar/eww";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.naersk.follows = "nixpkgs";
+      inputs.fenix.follows = "nixpkgs";
+      inputs.flake-utils.follows = "nixpkgs";
     };
 
   };
