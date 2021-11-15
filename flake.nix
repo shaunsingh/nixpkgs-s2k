@@ -72,7 +72,7 @@
         pkgs = import nixpkgs {
           inherit system;
           overlays = [ rust-nightly.overlay ];
-          # allowBroken = true;
+          allowBroken = true;
           # allowUnsupportedSystem = true;
         };
         mesonPkgs = import meson059 { inherit system; };
