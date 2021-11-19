@@ -28,7 +28,7 @@
     };
 
     yabai-src = {
-      url = "github:koekeishiya/yabai/the-future";
+      url = "github:koekeishiya/yabai";
       flake = false;
     };
 
@@ -71,15 +71,10 @@
     {
       overlay = final: prev: {
         inherit (self.packages.${final.system})
-          yabai-m1 
-		  neovide-git 
-		  sf-mono-liga-bin 
-		  emacs-ng 
-		  sway-borders-git
-          wlroots-git 
-		  eww 
-		  # hammerspoon	  
-		  alacritty-ligatures;
+          yabai-m1 neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
+          wlroots-git eww
+          # hammerspoon
+          alacritty-ligatures;
       };
     } // flake-utils.lib.eachSystem [
       "aarch64-darwin"
