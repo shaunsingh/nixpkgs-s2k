@@ -28,7 +28,7 @@
     };
 
     yabai-src = {
-      url = "github:donaldguy/yabai/canon";
+      url = "github:koekeishiya/yabai/the-future";
       flake = false;
     };
 
@@ -71,8 +71,15 @@
     {
       overlay = final: prev: {
         inherit (self.packages.${final.system})
-          yabai-m1 neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
-          wlroots-git eww alacritty-ligatures hammerspoon;
+          yabai-m1 
+		  neovide-git 
+		  sf-mono-liga-bin 
+		  emacs-ng 
+		  sway-borders-git
+          wlroots-git 
+		  eww 
+		  # hammerspoon	  
+		  alacritty-ligatures;
       };
     } // flake-utils.lib.eachSystem [
       "aarch64-darwin"
@@ -96,7 +103,7 @@
           eww = args.eww.defaultPackage.${system};
 
           sf-mono-liga-bin = pkgs.callPackage ./pkgs/sf-mono-liga-bin { };
-          hammerspoon-git = pkgs.callPackage ./pkgs/hammerspoon { };
+          # hammerspoon-git = pkgs.callPackage ./pkgs/hammerspoon { };
 
           alacritty-ligatures = with pkgs;
             (alacritty.overrideAttrs (old: rec {

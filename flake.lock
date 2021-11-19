@@ -53,11 +53,11 @@
         "rust-analyzer-src": "rust-analyzer-src"
       },
       "locked": {
-        "lastModified": 1637043732,
-        "narHash": "sha256-pp54U7DDb93hCy6RoWo9YYVmXvjU+MUioG+VsphxuGo=",
+        "lastModified": 1637216649,
+        "narHash": "sha256-S8GZ0WVLov4cnH4V8S1ZJCvpBSpVp296KYNz/yAQwOs=",
         "owner": "nix-community",
         "repo": "fenix",
-        "rev": "e99df422aa050980ba6f2c1d3cfe80b360d3f406",
+        "rev": "50752ddddd913c7d1ef5dcddce0210c2dac6b354",
         "type": "github"
       },
       "original": {
@@ -181,11 +181,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1637200415,
-        "narHash": "sha256-1xlcj0DUJJ3XNzjmiAd+vFo7hKiMCJOTcx64PnnVOug=",
+        "lastModified": 1637289634,
+        "narHash": "sha256-JEbbn6ARkzJX39VEvKwScJxqJgO3wMcZpjY94AOR6ME=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a8076300647187e6383ed63894e4d98fd596f2bd",
+        "rev": "d9e8a587e143aa8d3f1594004d63b5c785b416fb",
         "type": "github"
       },
       "original": {
@@ -214,11 +214,11 @@
     "rust-analyzer-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1636903618,
-        "narHash": "sha256-pdnQTMRLm9f4pgGZM7ho4A7QbhR+1howDepq0NqifcE=",
+        "lastModified": 1637179881,
+        "narHash": "sha256-rW2D8X57sKjAoNc8zbfavtPtQsFTYd43Yv580JApJdI=",
         "owner": "rust-analyzer",
         "repo": "rust-analyzer",
-        "rev": "73668334f05c3446b04116ccc3156240d2d8ab19",
+        "rev": "fdd49b97133a77ff652017d24b72ced37d4a822d",
         "type": "github"
       },
       "original": {
@@ -236,11 +236,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1637201710,
-        "narHash": "sha256-CxlxEp9NWvivBm+Z0TTVd5xF5aZed3isdNp4CmVQ6BM=",
+        "lastModified": 1637288133,
+        "narHash": "sha256-x5XWEK333KEhy2WL3TafE1vSa8/A1sGdbirTIV2bmSc=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "85733f85cd860760e3ed536b6e8a6ed0cd1ebde4",
+        "rev": "ccc467eff80b2fbb8000cf425e999ef14fbe200c",
         "type": "github"
       },
       "original": {
@@ -284,16 +284,16 @@
     "yabai-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1637089648,
-        "narHash": "sha256-M2QG84eAl9bIRTGW/wtm9roPxkBNfyq3NIegH9QnwsE=",
-        "owner": "donaldguy",
+        "lastModified": 1637271263,
+        "narHash": "sha256-Yin4/lfMxslhHRytJkpk3x2V1bmXSrfSOgTePpxIEKg=",
+        "owner": "koekeishiya",
         "repo": "yabai",
-        "rev": "7abc21177f2242bdce1a66ae475b92d6011a6ffa",
+        "rev": "4848ec028b60c29f3edb869f07e9e78834f3733a",
         "type": "github"
       },
       "original": {
-        "owner": "donaldguy",
-        "ref": "canon",
+        "owner": "koekeishiya",
+        "ref": "the-future",
         "repo": "yabai",
         "type": "github"
       }
