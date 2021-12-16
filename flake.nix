@@ -28,7 +28,7 @@
     };
 
     yabai-src = {
-      url = "github:koekeishiya/yabai";
+      url = "github:koekeishiya/yabai/master";
       flake = false;
     };
 
@@ -72,7 +72,7 @@
       overlay = final: prev: {
         inherit (self.packages.${final.system})
           yabai-m1 neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
-          wlroots-git eww
+          wlroots-git eww mxfw
           # hammerspoon
           alacritty-ligatures;
       };
@@ -98,6 +98,7 @@
           eww = args.eww.defaultPackage.${system};
 
           sf-mono-liga-bin = pkgs.callPackage ./pkgs/sf-mono-liga-bin { };
+          mxfw = pkgs.callPackage ./pkgs/mxfw { };
           # hammerspoon-git = pkgs.callPackage ./pkgs/hammerspoon { };
 
           alacritty-ligatures = with pkgs;
@@ -151,9 +152,8 @@
           yabai-m1 = (pkgs.yabai.overrideAttrs (old: {
             inherit version;
             src = args.yabai-src;
-            # buildInputs = [ Carbon Cocoa ScriptingBridge xxd ];
-            buildInputs = (old.buildInputs or [ ])
-              ++ (with pkgs; [ xcodebuild ]);
+            # buildInputs = with prev.darwin.apple_sdk.frameworks; [ Carbon Cocoa ScriptingBridge xxd SkyLight ];
+            # nativeBuildInputs = [ buildSymlinks ];
           }));
 
           neovide-git = (pkgs.neovide.overrideAttrs (old: {
