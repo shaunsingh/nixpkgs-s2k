@@ -27,11 +27,6 @@
       flake = false;
     };
 
-    yabai-src = {
-      url = "github:koekeishiya/yabai/master";
-      flake = false;
-    };
-
     neovide-src = {
       url = "github:neovide/neovide";
       flake = false;
@@ -41,7 +36,10 @@
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    darwin = {
+      url = "github:lnl7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     rust-nightly = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,11 +65,11 @@
 
   };
 
-  outputs = args@{ self, flake-utils, nixpkgs, rust-nightly, meson059, ... }:
+  outputs = args@{ self, flake-utils, nixpkgs, rust-nightly, meson059, darwin, ... }:
     {
       overlay = final: prev: {
         inherit (self.packages.${final.system})
-          yabai-m1 neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
+          neovide-git sf-mono-liga-bin emacs-ng sway-borders-git
           wlroots-git eww mxfw
           # hammerspoon
           alacritty-ligatures;
@@ -148,13 +146,6 @@
             inherit (mesonPkgs) meson;
             wlroots = wlroots-git;
           };
-
-          yabai-m1 = (pkgs.yabai.overrideAttrs (old: {
-            inherit version;
-            src = args.yabai-src;
-            # buildInputs = with prev.darwin.apple_sdk.frameworks; [ Carbon Cocoa ScriptingBridge xxd SkyLight ];
-            # nativeBuildInputs = [ buildSymlinks ];
-          }));
 
           neovide-git = (pkgs.neovide.overrideAttrs (old: {
             inherit version;
