@@ -3,7 +3,6 @@
 Based off of https://github.com/fortuneteller2k/nixpkgs-f2k
 
 Provides the following: 
-- yabai-m1 (mac only) for https://github.com/donaldguy/yabai/canon
 - neovide-git for https://github.com/neovide/neovide
 - sf-mono-liga-bin for https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized
 - emacs-ng from https://github.com/emacs-ng/emacs-ng
@@ -23,7 +22,7 @@ Provides the following:
 
   outputs = { self, nixpkgs-s2k, ... }@inputs: {
     nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      system = "x86_64-linux"; # whatever system you use
       modules = [
         { nixpkgs.overlays = [ nixpkgs-s2k.overlay ]; }
         ./configuration.nix
